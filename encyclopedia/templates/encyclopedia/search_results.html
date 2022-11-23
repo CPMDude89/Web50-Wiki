@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block body %}
+<h1>
+    This is the Search Results page. You have searched for '{{lookup}}'
+</h1>
+
+<h2>
+    Here is a list of wiki entries that contain your search:
+</h2>
+
+<ul>
+    {% for potential_entry in potential_entries %}
+        <li><a href="{% url 'page' potential_entry %}">{{potential_entry}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
